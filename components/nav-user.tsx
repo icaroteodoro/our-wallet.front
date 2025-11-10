@@ -1,12 +1,10 @@
 "use client";
 
 import {
-  Bell,
   ChevronsUpDown,
   LogOut,
   PaintRollerIcon,
   Settings,
-  Sparkles,
   User,
 } from "lucide-react";
 
@@ -21,9 +19,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import {
-  SidebarMenu,
   SidebarMenuButton,
-  SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
 

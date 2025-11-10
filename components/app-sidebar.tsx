@@ -2,24 +2,15 @@
 
 import * as React from "react"
 import {
-  AudioWaveform,
-  BookOpen,
-  Bot,
   ChartBarBig,
-  CircleCheck,
-  Command,
-  Frame,
-  GalleryVerticalEnd,
   Home,
-  Map,
-  NotepadText,
-  PieChart,
-  Settings2,
-  SquareTerminal,
+  ArrowLeftRight,
+  Wallet,
+  Wallet2,
+
 } from "lucide-react"
 
 import { NavMain } from "@/components/nav-main"
-import { NavUser } from "@/components/nav-user"
 import {
   Sidebar,
   SidebarContent,
@@ -27,44 +18,39 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar"
-import { Header } from "./header"
 import { WalletSwitcher } from "./wallet-switcher"
+import { NavUser } from "./nav-user"
 
 // This is sample data.
 const data = {
-    wallets: [
+  wallets: [
     {
-      name: "Acme Inc",
-      logo: GalleryVerticalEnd,
-      plan: "Enterprise",
+      name: "Minha carteira",
+      logo: Wallet2,
+      plan: "Ícaro Teodoro",
     },
     {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
-    },
-    {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free",
+      name: "Ícaro e Maria",
+      logo: Wallet2,
+      plan: "Maria Ferreira",
     },
   ],
   navMain: [
     {
       title: "Início",
-      url: "dashboard",
+      url: "home",
       icon: Home,
       isActive: true,
     },
     {
-      title: "Dailys",
-      url: "dailys",
-      icon: NotepadText,
+      title: "Transações",
+      url: "transactions",
+      icon: ArrowLeftRight,
     },
     {
-      title: "Tarefas",
-      url: "tasks",
-      icon: CircleCheck,
+      title: "Minhas Carteiras",
+      url: "wallets",
+      icon: Wallet,
     },
     {
       title: "Relatórios",
@@ -84,6 +70,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarContent>
         <NavMain items={data.navMain} />
       </SidebarContent>
+      <SidebarFooter>
+        <div className="gap-3 flex lg:hidden items-center">
+          <NavUser user={{ name: "Ícaro Teodoro", email: "icaro.teodoro84@icloud.com", avatar: "" }} />
+        </div>
+      </SidebarFooter>
       <SidebarRail />
     </Sidebar>
   )
