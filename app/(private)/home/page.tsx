@@ -1,4 +1,7 @@
 'use client'
+import { CategoryBarChart } from "@/components/card-category-bar-chart";
+import { CategoryPieChart } from "@/components/card-category-pie-chart";
+import CardTransactionList from "@/components/card-transaction-list";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Eye, EyeClosed, PlusCircle, TrendingDown, TrendingUp, Wallet } from "lucide-react";
@@ -9,7 +12,7 @@ export default function HomePage() {
     return (
         <section className="p-5 pt-20 bg-zinc-50">
             <div className="flex flex-col lg:flex-row gap-5">
-                <div className="w-full lg:w-6/12 gap-5 flex flex-col">
+                <div className="w-full lg:w-7/12 gap-5 flex flex-col">
                     <Card className="bg-[#55B02E20]">
                         <CardHeader>
                             <CardTitle className="flex justify-between">
@@ -58,11 +61,17 @@ export default function HomePage() {
                             </CardContent>
                         </Card>
                     </div>
+                    <div className="flex flex-col lg:flex-row gap-2">
+                        <div className="w-full lg:w-6/12">
+                            <CategoryPieChart />
+                        </div>
+                        <div className="w-full lg:w-6/12">
+                            <CategoryBarChart/>
+                        </div>
+                    </div>
                 </div>
-                <div className="w-full lg:w-6/12">
-                    <Card >
-
-                    </Card>
+                <div className="w-full lg:w-5/12">
+                    <CardTransactionList />
                 </div>
             </div>
         </section>
